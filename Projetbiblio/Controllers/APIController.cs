@@ -56,7 +56,7 @@ namespace Projetbiblio.Controllers
 
                 return NotFound();
 
-            return new List<Book>() { new Book() { Name = "Test", Content = "Lorem ipsum", Price = 9.99f } };
+            return new List<Book>() { new Book() { Name = "Test", Content = "Lorem ", Price = 19.99f } };
 
         }
 

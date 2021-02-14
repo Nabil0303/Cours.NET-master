@@ -30,15 +30,7 @@ namespace WPF.Reader.ViewModel
     {
         private static readonly object padlock = new object();
         private static Navigator instance;
-        public static Navigator Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new Navigator();
-                return instance;
-            }
-        }
+        public static Navigator Instance { get => instance; }
         public PageEnum CurrentPage { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;

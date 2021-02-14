@@ -16,24 +16,15 @@
     </Page.Resources>
 
     <Grid DataContext="{StaticResource ResourceKey=listBooks}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="112*"/>
-            <RowDefinition Height="113*"/>
-        </Grid.RowDefinitions>
-        <ListBox ItemsSource="{Binding Books}"  HorizontalContentAlignment="Left" x:Name="booksList" Grid.RowSpan="2">
-            <behaviors:Interaction.Triggers>
-                <behaviors:EventTrigger EventName="SelectionChanged">
-                    <behaviors:InvokeCommandAction Command="{Binding ItemSelectedCommand}" CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBox}}}" />
-                </behaviors:EventTrigger>
-            </behaviors:Interaction.Triggers>
-            <ListBox.ItemTemplate>
-                <DataTemplate DataType="{x:Type model:Book}">
-                    <StackPanel Orientation="Horizontal" Background="Aquamarine">
-                        <Label Content="Nom: "/>
-                        <TextBox Text="{Binding Path=Titre}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Expander Header="List DataBinding" IsExpanded="True" Margin="10,70,0,0">
+            <Grid>
+                <ListBox Grid.Column="0" ItemsSource="{Binding Articles}" x:Name="articleList" Grid.ColumnSpan="2" Margin="5,10,33,124"/>
+                <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Margin="227,0,396,0" />
+                <ItemsControl Grid.Column="2"  ItemsSource="{Binding ElementName=articleList, Path=SelectedItems}" VerticalAlignment="Center"/>
+            </Grid>
+        </Expander>
+        <Button Content="Details" Command="{Binding Path=(vm:Navigator.Instance).GoTo}" CommandParameter="DETAIL" Height="30" Width="80" Margin="350,367,350,53"/>
+
     </Grid>
 </Page>
+

@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:WPF.Reader"
         xmlns:model="clr-namespace:WPF.Reader.ViewModel"
         mc:Ignorable="d"
-    Title="MainWindow" Height="450" Width="800">
+    Title="MainWindow" Height="700" Width="800">
     <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DataContext="{Binding Path=(model:Navigator.Instance)}">
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right" >
-            <Button Command="{Binding Path=(model:Navigator.Instance).GoTo}" CommandParameter="DETAIL" Width="50" Content="Accueil"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right" >
+            <Button Command="{Binding Path=(model:Navigator.Instance).GoTo}" CommandParameter="LIST" Width="50" Content="Accueil"/>
         </StackPanel>
+        <Label DockPanel.Dock="Top" Content="Library system" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30px"/>
         <Frame DockPanel.Dock="Bottom" x:Name="Navigation" NavigationUIVisibility="Hidden" Margin="0">
             <Frame.Style>
                 <Style TargetType="Frame">

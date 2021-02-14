@@ -13,7 +13,13 @@
         <vm:ReadBook x:Key="readBook" />
     </Page.Resources>
 
-    <Grid DataContext="{StaticResource ResourceKey=readBook}">
-        <Label Content="Test 2"/>
+    <Grid DataContext="{StaticResource ResourceKey=readBook}" Margin="0,0,56,10">
+        <Button Command="{Binding Path=(vm:Navigator.Instance).GoTo}" CommandParameter="LIST" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="200" Content="Read Book" Margin="282,0,0,27"/>
+        <Label Content="{Binding Path=Contenu}" Margin="161,102,84,82"/>
+        <Label Content="Content :" Grid.Row="0" FontFamily="Verdana" FontSize="20" Margin="142,40,451,348"></Label>
+        <TextBox  Margin="142,92,0,92" TextWrapping="Wrap" FontFamily="Verdana" FontSize="20" HorizontalAlignment="Left" Height="256" Width="542">
+            [Content of this book!]
+        </TextBox>
     </Grid>
 </Page>
+

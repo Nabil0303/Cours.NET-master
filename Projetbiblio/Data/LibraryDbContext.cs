@@ -29,6 +29,7 @@ namespace Projetbiblio.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Genre> Genre { get; internal set; }
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 

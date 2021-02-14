@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projetbiblio.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace Projetbiblio.Model
 {
     public class Genre
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         [Key]
         public String Name { get; set; }

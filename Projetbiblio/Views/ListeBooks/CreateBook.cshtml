@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Add a book";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+<form asp-controller="ListeBooks" asp-action="Create">
+    &nbsp;
+    <table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
+        <tr>
+            <td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
+                height="26">
+                <strong>
+                    <STRONG>Add a book</STRONG>
+                </strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
+               Book name：
+            </td>
+            <td class="ta_01" bgColor="#ffffff">
+                <input type="text" name="bookname" value="" id="userAction_save_do_logonName" class="bg" />
+            </td>
+        </tr>
+        <tr>
+            <td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
+               Price：
+            </td>
+            <td class="ta_01" bgColor="#ffffff">
+                <input type="text" name="price" value="" id="userAction_save_do_logonName" class="bg" />
+            </td>
+
+        </tr>
+
+        <tr>
+            <td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
+                Catagory：
+            </td>
+            <td class="ta_01" bgColor="#ffffff" colspan="3">
+                <select name="genreName">
+                    @foreach (var genre in ViewBag.listeGenres) {
+                        <option value="@genre.Name">@genre.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
+                Content：
+            </td>
+            <td class="ta_01" bgColor="#ffffff" colspan="3">
+                <textarea name="content" rows="5" cols="30"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="ta_01" style="WIDTH: 100%" align="center"
+                bgColor="#f5fafe" colSpan="4">
+                <button type="submit" id="userAction_save_do_submit" value="确定" class="button_ok">
+                    Confirmer
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="listeBooks">
+    <h1>Liste Book:</h1>
+    <table class="table table-bordered">
+        @foreach (var book in ViewBag.listeBooks)
+        {   <tr class="warning">
+                <th>Name</th>
+                <th>Content</th>
+                <th>Price</th>
+                <th>genres</th>
+                <th>operation</th>
+            </tr>
+            <tr class="active">
+                <td width="15%">
+                    @book.Name
+                </td>
+                <td width="15%">
+                    @book.Content
+                </td>
+                <td width="15%">
+                    @book.Price
+                </td>
+                <td width="15%">
+                    @foreach (var genre in book.Genres)
+                    {<ul>@genre.Name</ul>}
+                </td>
+                <td width="15%">
+                    <form  asp-controller="ListeBooks" asp-action="DeleteBook">
+                        <input type="hidden" value="@book.Name" name="name" />
+                        <input type="submit" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+@*<div class="listeBooks">
+    bonjour
+    @foreach (var book in ViewBag.listeBooks)
+    {
+        @book.Name
+        @book.Content
+        @book.Price
+    }
+</div>*@
+

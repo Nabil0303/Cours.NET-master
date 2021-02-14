@@ -18,7 +18,8 @@ namespace WPF.Reader.ViewModel
         public ICommand ItemSelectedCommand { get; set; }
 
         // To replace with your own data !!!!!!!!!!!!!!
-        public ObservableCollection<Book> Books { get; set; } = new ObservableCollection<Book>() { new Book() };
+
+        public ObservableCollection<Book> Books { get; set; } = new ObservableCollection<Book>() { new Book() { Title="title" } };
 
         public ListBookViewModel()
         {

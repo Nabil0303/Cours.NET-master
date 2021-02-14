@@ -9,12 +9,6 @@ namespace WPF.Reader.Service
     class LibraryService
     {
         private static LibraryService instance;
-        public static LibraryService Instance { get
-            {
-                if (instance == null)
-                    instance = new LibraryService();
-                return instance;
-            }
-        }
+        public static LibraryService Instance { get => instance; }
     }
 }

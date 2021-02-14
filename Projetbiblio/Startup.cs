@@ -30,32 +30,32 @@ namespace Projetbiblio
             services.AddSwaggerDocument();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder Projetbiblio, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                Projetbiblio.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                Projetbiblio.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                Projetbiblio.UseHsts();
             }
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
-            app.UseAuthorization();
-            app.UseOpenApi();
-            app.UseSwaggerUi3();
-            app.UseEndpoints(endpoints =>
+            Projetbiblio.UseHttpsRedirection();
+            Projetbiblio.UseStaticFiles();
+            Projetbiblio.UseRouting();
+            Projetbiblio.UseAuthorization();
+            Projetbiblio.UseOpenApi();
+            Projetbiblio.UseSwaggerUi3();
+            Projetbiblio.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            using (var scope = app.ApplicationServices.CreateScope())
+            using (var scope = Projetbiblio.ApplicationServices.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var libraryDbContext = services.GetRequiredService<LibraryDbContext>();
